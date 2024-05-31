@@ -1,25 +1,12 @@
 export default defineNuxtConfig({
-  typescript: { shim: false },
+  devtools: { enabled: true },
 
-  experimental: { inlineSSRStyles: false },
-
-  build: { transpile: ['trpc-nuxt'] },
-
-  css: ['@unocss/reset/tailwind.css'],
+  build: { transpile: ["trpc-nuxt"] },
 
   modules: [
-    'nuxt-icon',
-    '@unocss/nuxt',
-    '@vueuse/nuxt',
-    // '@nuxt/image-edge',
-    '@nuxt/devtools',
+    "@nuxt/eslint",
+    "@nuxtjs/tailwindcss",
   ],
 
-  // image: {
-  //   domains: ['https://images.unsplash.com'],
-  //   alias: { unsplash: 'https://images.unsplash.com' },
-  //   unsplash: {},
-  // },
-
-  sourcemap: false,
+  eslint: { config: { standalone: false } },
 })
